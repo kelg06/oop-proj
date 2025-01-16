@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,10 +14,14 @@ public class Main {
         number = scanner.nextInt();
         long randomNumber = randomizer.ranNumber(number,rand);
         int tryCount = 0;
+        ArrayList<Integer> guesses = new ArrayList<>();
         while(true) {
             System.out.println("Enter your guess between (1-"+ number + ")");
-
             int playerGuess = scanner.nextInt();
+            guesses.add(playerGuess);
+            for (int i = 0; i < guesses.size(); i++) {
+                System.out.print(guesses.get(i)+ ",");
+            }
             tryCount++;
 
             if (playerGuess == randomNumber) {
@@ -25,10 +30,10 @@ public class Main {
                 break;
             }
             else if(randomNumber > playerGuess) {
-                System.out.println("Nope! The number is higher. Guess again.");
+                System.out.println("\nNope! The number is higher. Guess again.");
             }
             else {
-                System.out.println("Nope! The number is lower. Guess again.");
+                System.out.println("\nNope! The number is lower. Guess again.");
             }
         }
         scanner.close();
