@@ -7,15 +7,14 @@ public class Main {
 
         Random rand = new Random();
         Scanner scanner = new Scanner(System.in);
-        int number;
-
+        long number;
+        randomizer randomClass = new randomizer();
         System.out.println("Please enter a number: ");
         number = scanner.nextInt();
-        int randomNumber = rand.nextInt(number) + 1;
-        System.out.println(randomNumber);
+        long randomNumber = randomizer.ranNumber(number,rand);
         int tryCount = 0;
         while(true) {
-            System.out.println("Enter your guess (1-"+ number + ")");
+            System.out.println("Enter your guess between (1-"+ number + ")");
 
             int playerGuess = scanner.nextInt();
             tryCount++;
@@ -32,8 +31,6 @@ public class Main {
                 System.out.println("Nope! The number is lower. Guess again.");
             }
         }
-
-
         scanner.close();
 
     }
