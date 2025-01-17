@@ -19,8 +19,8 @@ public class Main {
             System.out.println("Enter your guess between (1-"+ number + ")");
             int playerGuess = scanner.nextInt();
             guesses.add(playerGuess);
-            for (int i = 0; i < guesses.size(); i++) {
-                System.out.print(guesses.get(i)+ ",");
+            for (int guess :guesses) {
+                System.out.print(guess+ ",");
             }
             tryCount++;
 
